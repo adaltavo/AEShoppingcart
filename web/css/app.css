@@ -8,11 +8,12 @@ and open the template in the editor.
     Author     : gustavo
 */
 .cartShelf{
-    width: 1200px
+    width: 1320px
     
 }
 .simpleCart_shelfItem{
     width: 400px;
     height: 300px;
-    float: right
+    float: right;
+    margin: 20px;
 }
