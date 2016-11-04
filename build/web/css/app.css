@@ -7,3 +7,12 @@ and open the template in the editor.
     Created on : 2/11/2016, 07:58:22 PM
     Author     : gustavo
 */
+.cartShelf{
+    width: 1200px
+    
+}
+.simpleCart_shelfItem{
+    width: 400px;
+    height: 300px;
+    float: right
+}

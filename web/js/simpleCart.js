@@ -620,13 +620,13 @@
 
 				// write out cart
 				writeCart: function (selector) {
-					var TABLE = settings.cartStyle.toLowerCase(),
+					var TABLE = 'table',//settings.cartStyle.toLowerCase(),
 						isTable = TABLE === 'table',
-						TR = isTable ? "tr" : "div",
-						TH = isTable ? 'th' : 'div',
-						TD = isTable ? 'td' : 'div',
-                                                TBODY = isTable ? 'tbody':'div',
-						THEAD = isTable ? 'thead' : 'div',
+						TR = isTable ? "tr" : "tr",
+						TH = isTable ? 'th' : 'th',
+						TD = isTable ? 'td' : 'td',
+                                                TBODY = isTable ? 'tbody':'tbody',
+						THEAD = isTable ? 'thead' : 'thead',
 						cart_container = simpleCart.$create(TABLE).addClass('table table-hover'),
                                                 cart_inner_container = simpleCart.$create(TBODY),
 						thead_container = simpleCart.$create(THEAD),
