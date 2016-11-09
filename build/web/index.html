@@ -11,14 +11,17 @@ and open the template in the editor.
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/app.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery.growl.css" type="text/css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
         <script type="text/javascript" src="js/simpleCart.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/numeral.min.js"></script>
+         <script type="text/javascript" src="js/numeral.min.js"></script>
         <script type="text/javascript" src="js/bootbox.min.js"></script>
+        <script type="text/javascript" src="js/jquery.growl.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+       
 
 
 
@@ -48,7 +51,9 @@ and open the template in the editor.
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <button id="showCart" class="btn btn-primary btn-lg" onclick="showModal()">Ver carrito <i class="glyphicon glyphicon-shopping-cart" style=""></i></button>
+                            <button id="showCart" class="btn btn-primary btn-lg" onclick="showModal()">
+                                Ver carrito <i class="glyphicon glyphicon-shopping-cart" style=""></i> <span id="cartNumber"></span>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -60,70 +65,7 @@ and open the template in the editor.
 
             </div>
             <div id="cartShelf" class="cartShelf">
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesomes T-shirt </h2>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-                    <a class="item_add" href="javascript:;"> Add to Cart </a>
-                </div>
-                <div class="simpleCart_shelfItem">
-                    <h2 class="item_name"> Awesome T-shirt </h2>
-                    <select class="item_size">
-                        <option value="Small"> Small </option>
-                        <option value="Medium"> Medium </option>
-                        <option value="Large"> Large </option>
-                    </select>
-                    <select class="item_size">
-                        <option value="Small"> Small </option>
-                        <option value="Medium"> Medium </option>
-                        <option value="Large"> Large </option>
-                    </select>
-                    <select class="item_size">
-                        <option value="Small"> Small </option>
-                        <option value="Medium"> Medium </option>
-                        <option value="Large"> Large </option>
-                    </select>
-                    <input type="text" value="1" class="item_Quantity">
-                    <span class="item_price">$35.99</span>
-
-                    <a class="item_add" href="javascript:;" title="Agregar al carrito"> <i class="glyphicon glyphicon-plus-sign">dad</i> </a>
-                </div>
+             
 
             </div>
         </div>

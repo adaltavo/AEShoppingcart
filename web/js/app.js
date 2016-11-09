@@ -38,17 +38,17 @@ $(function () {
             type: "SendForm",
             url: "http://localhost:8080/AEEcommerce/Checkout",
             // http method for form, "POST" or "GET", default is "POST"
-            method: "GET",
+            //method: "POST",
             // url to return to on successful checkout, default is null
-            success: "success.html",
+            success: "http://localhost:8080/ShoppingCart/success.html",
             // url to return to on cancelled checkout, default is null
-            cancel: "cancel.html",
+            cancel: "http://localhost:8080/ShoppingCart/cancel.html",
             // an option list of extra name/value pairs that can
             // be sent along with the checkout data
-           /* extra_data: {
-                storename: "Bob's cool plumbing store",
-                cartid: "12321321"
-            }*/
+            /* extra_data: {
+             storename: "Bob's cool plumbing store",
+             cartid: "12321321"
+             }*/
             //formato checkout-form
             //http://localhost:8080/AEEcommerce/Checkout?currency=MXN&shipping=0&tax=0&taxRate=0&itemCount=2&item_name_1=Nuevo&item_quantity_1=1&item_price_1=7567&item_options_1=stock%3A+Stock%3A+7+&item_name_2=grecia&item_quantity_2=3&item_price_2=7&item_options_2=stock%3A+Stock%3A+8+&return=success.html&cancel_return=cancel.html&storename=Bob%27s+cool+plumbing+store&cartid=12321321
         },
@@ -71,6 +71,7 @@ $(function () {
     });
     //actualizo el plugin para que retome las configuraciones desde el inicio (no lo hace automaticamente//mal diseño del plugin)
     simpleCart.update();
+    updateCartNumber(simpleCart.quantity());
     simpleCart.bind('afterAdd', function (item) {
         /*
          var stock = item.get('stock').split(':')[1];
@@ -84,6 +85,7 @@ $(function () {
          console.log(item.get('stock'));
          //console.log(this.find({name:"Nuevo"})[0].get('Quantity'));
          */
+        updateCartNumber(simpleCart.quantity());
         console.log(item.get('id'));
     });
     simpleCart.bind('beforeAdd', function (item) {
@@ -95,26 +97,31 @@ $(function () {
         var stock = item.get('stock').split(':')[1];
         var itemr = this.find({name: item.get('name')});
         if (itemr.length > 0)
-            if (itemr[0].get('quantity') + item.quantity() > stock) {
+            if (itemr[0].get('quantity') + item.quantity() > stock) { //si intenta agregar productos que no hay en stock
                 bootbox.alert('<h3>Lo sentimos, no hay stock suficiente :(</h3>');
                 console.log('no se agrego prro');
                 return false;
             }
         console.log(item.quantity());
-        if (item.quantity() > stock) {
+        if (item.quantity() > stock) { //si intenta agregar productos por primera vez con stock suficiente
             bootbox.alert('<h3>Lo sentimos, no hay stock suficiente :(</h3>');
             console.log('no se agrego prro2');
             return false;
         }
-
+        $.growl.warning({title: "Mensaje", message: "Producto agregado al carrito"});
+        
         console.log(item.quantity());
     });
-
+    simpleCart.bind('beforeRemove',function (item){
+        updateCartNumber(simpleCart.quantity()-item.quantity()); 
+    });
+ 
     //Obtener lista de productos
-    var products = "";
+
     $.getJSON("http://localhost:8080/AEEcommerce/GetProducts", function (data) {
         // Get the element with id summary and set the inner text to the result.
         //console.log(data.msg);
+        var products = "";
         products = $.parseJSON(data.msg);
         products.forEach(function (element) {
             var item = $('<div><div>').addClass('simpleCart_shelfItem');
@@ -134,6 +141,10 @@ $(function () {
 
     });
 });
+
+function updateCartNumber(num) {
+    $("#cartNumber").text(num);
+}
 
 function showModal() {
     $("#modalCart").modal('show');
