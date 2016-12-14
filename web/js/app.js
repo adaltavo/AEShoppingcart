@@ -144,6 +144,7 @@ $(function () {
 
 function updateCartNumber(num) {
     $("#cartNumber").text(num);
+    $("#showCart").prop("disabled",num<=0);       
 }
 
 function showModal() {

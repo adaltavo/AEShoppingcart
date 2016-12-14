@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery.growl.css" type="text/css">
+        <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootbox.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/messages_es.js"></script> <!--Archivo que contiene los mensajes en español para jQery validate--->
+        <script type="text/javascript" src="js/jquery.growl.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div id="nav" class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarcollapse" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" >Principal</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container col-sm-4 col-sm-offset-4" style="margin-top: 70px">
+            <div class="col-sm-offset-4">
+                <img width="100" height="155" src="img/login.png">
+            </div>
+            <form id="frmLogin" action="ValidateUser">
+                <div class="form-group">
+                    <label class="control-label" for="username">Usuario</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-adjust"></i>
+                        </span>
+                        <input class="form-control" type="text" id="username" name="username" placeholder="nombre"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="password">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-adjust"></i>
+                        </span>
+                        <input class="form-control" type="password" id="password" name="password" placeholder="contra"/>
+                    </div>
+                </div>
+
+                <div align="right">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="glyphicon glyphicon-log-in"></i> Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
