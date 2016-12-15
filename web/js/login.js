@@ -53,6 +53,9 @@ function Validate(){
         if(json.code==200){
             window.location.replace("index.html");
         }
+        else if(json.code==302){
+            window.location.replace("cancel.html?error=ya hay una sesion activa: "+json.user);
+        }
         else{
             $.growl.error({
                 title:"Error",
